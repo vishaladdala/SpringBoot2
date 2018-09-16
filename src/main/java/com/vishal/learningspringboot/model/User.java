@@ -6,17 +6,17 @@ public class User {
 	private final UUID userId;
 	private final String firstName;
 	private final String lastName;
-	private final Gender gender;
+	//private final Gender gender;
 	private final Integer age;
 	private final String email;
 	
 	
-	public User(UUID userId, String firstName, String lastName, Gender gender, Integer age, String email) {
+	public User(UUID userId, String firstName, String lastName, Integer age, String email) {
 		super();
 		this.userId = userId;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.gender = gender;
+		//this.gender = gender;
 		this.age = age;
 		this.email = email;
 	}
@@ -28,8 +28,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
-				+ ", age=" + age + ", email=" + email + "]";
+		return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", + ", age=" + age + ", email=" + email + "]";
 	}
 
 
@@ -64,14 +63,6 @@ public class User {
 
 
 
-	public Gender getGender() {
-		return gender;
-	}
-
-
-
-
-
 
 	public Integer getAge() {
 		return age;
@@ -91,8 +82,5 @@ public class User {
 
 
 
-	enum Gender{
-		MALE,
-		FEMALE
-	}
+	
 }
