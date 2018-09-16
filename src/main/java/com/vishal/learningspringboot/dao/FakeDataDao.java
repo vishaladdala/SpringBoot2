@@ -1,6 +1,7 @@
 package com.vishal.learningspringboot.dao;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,31 +23,35 @@ public class FakeDataDao implements UserDao{
 	@Override
 	public List<User> getAllUsers() {
 		// TODO Auto-generated method stub
-		return null;
+		return new ArrayList<>(database.values());
 	}
 
 	@Override
 	public User getUser(UUID userUid) {
 		// TODO Auto-generated method stub
-		return null;
+		return database.get(userUid);
 	}
 
 	@Override
 	public int updateUser(User user) {
 		// TODO Auto-generated method stub
-		return 0;
+		database.put(user.getUserId(), user);
+		return 1;
 	}
 
 	@Override
 	public int removeUser(UUID userUid) {
 		// TODO Auto-generated method stub
-		return 0;
+		database.remove(userUid);
+		return 1;
 	}
 
 	@Override
-	public int insertUser(User user) {
+	public int insertUser(UUID userId,User user) {
 		// TODO Auto-generated method stub
-		return 0;
+		database.put(userId,user);
+		return 1;
+		
 	}
 
 	
