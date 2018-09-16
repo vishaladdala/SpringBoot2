@@ -7,8 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import org.springframework.stereotype.Repository;
+
 import com.vishal.learningspringboot.model.User;
 
+@Repository
 public class FakeDataDao implements UserDao{
 	
 	private static Map<UUID,User> database;
@@ -21,13 +24,13 @@ public class FakeDataDao implements UserDao{
 	}
 	
 	@Override
-	public List<User> getAllUsers() {
+	public List<User> selectAllUsers() {
 		// TODO Auto-generated method stub
 		return new ArrayList<>(database.values());
 	}
 
 	@Override
-	public User getUser(UUID userUid) {
+	public User selectUserbyUserUid(UUID userUid) {
 		// TODO Auto-generated method stub
 		return database.get(userUid);
 	}
@@ -40,7 +43,7 @@ public class FakeDataDao implements UserDao{
 	}
 
 	@Override
-	public int removeUser(UUID userUid) {
+	public int deleteUserbyUserUid(UUID userUid) {
 		// TODO Auto-generated method stub
 		database.remove(userUid);
 		return 1;

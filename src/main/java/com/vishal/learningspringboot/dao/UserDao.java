@@ -9,13 +9,13 @@ import com.vishal.learningspringboot.model.User;
 
 public interface UserDao {
 	
-	List<User> getAllUsers();
+	List<User> selectAllUsers();
 	
-	User getUser(UUID userUid);
+	User selectUserbyUserUid(UUID userUid);
 	
 	int updateUser(User user);
 	
-	int removeUser(UUID userUid);
+	int deleteUserbyUserUid(UUID userUid);
 	
 	int insertUser(UUID userId,User user);
 	
