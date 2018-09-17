@@ -2,6 +2,9 @@ package com.vishal.learningspringboot.model;
 
 import java.util.UUID;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
 	private final UUID userId;
 	private final String firstName;
@@ -19,16 +22,6 @@ public class User {
 		//this.gender = gender;
 		this.age = age;
 		this.email = email;
-	}
-
-
-
-
-
-
-	@Override
-	public String toString() {
-		return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", + ", age=" + age + ", email=" + email + "]";
 	}
 
 
